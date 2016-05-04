@@ -1,0 +1,85 @@
+{
+  "name": "material-ui",
+  "author": {
+    "name": "Call-em-all Engineering Team"
+  },
+  "version": "0.15.0-beta.2",
+  "description": "Material Design UI components built with React",
+  "main": "./index.js",
+  "keywords": [
+    "react",
+    "react-component",
+    "material design",
+    "material-ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callemall/material-ui.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/callemall/material-ui/issues"
+  },
+  "homepage": "http://material-ui.com/",
+  "peerDependencies": {
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0",
+    "react-tap-event-plugin": "^1.0.0"
+  },
+  "dependencies": {
+    "inline-style-prefixer": "^1.0.2",
+    "keycode": "^2.1.0",
+    "lodash.merge": "^4.1.0",
+    "lodash.throttle": "^4.0.0",
+    "react-addons-create-fragment": "^15.0.0",
+    "react-addons-transition-group": "^15.0.0",
+    "react-addons-update": "^15.0.0",
+    "react-event-listener": "^0.1.1",
+    "recompose": "^0.17.0",
+    "simple-assign": "^0.1.0",
+    "warning": "^2.1.0"
+  },
+  "_id": "material-ui@0.15.0-beta.2",
+  "scripts": {},
+  "_shasum": "36dd4f5a034fc13c7c0fc01568c3b9c580316d24",
+  "_from": "material-ui@^0.15.0-beta.2",
+  "_npmVersion": "3.7.3",
+  "_nodeVersion": "5.8.0",
+  "_npmUser": {
+    "name": "hai-cea",
+    "email": "hai@call-em-all.com"
+  },
+  "dist": {
+    "shasum": "36dd4f5a034fc13c7c0fc01568c3b9c580316d24",
+    "tarball": "https://registry.npmjs.org/material-ui/-/material-ui-0.15.0-beta.2.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "callemall",
+      "email": "engineering@call-em-all.com"
+    },
+    {
+      "name": "hai-cea",
+      "email": "hai@call-em-all.com"
+    },
+    {
+      "name": "jtollerene",
+      "email": "jtollerene@gmail.com"
+    },
+    {
+      "name": "mmrtnz",
+      "email": "muhammad_martinez@yahoo.com"
+    },
+    {
+      "name": "shaurya947",
+      "email": "shaurya.arora1@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/material-ui-0.15.0-beta.2.tgz_1461282482723_0.5007585936691612"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/material-ui/-/material-ui-0.15.0-beta.2.tgz",
+  "readme": "ERROR: No README data found!"
+}
