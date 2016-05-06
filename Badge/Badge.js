@@ -46,7 +46,7 @@ function getStyles(props, context) {
     badgeTextColor = badge.textColor;
   }
 
-  var radius = 12;
+  var radius = 10;
   var radius2x = Math.floor(2 * radius);
 
   return {
