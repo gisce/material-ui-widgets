@@ -172,12 +172,15 @@ var NotificationBadge = function (_React$Component) {
         {
             key: 'componentWillMount',
             value: function componentWillMount() {
+                var randomKey = Math.floor(Math.random() * 100);
+
                 this.setState({
                     open: this.props.open,
                     count: this.props.notificationsList.length,
                     notifications: this.props.notificationsList,
                     badgeColor: this.props.badgeColor,
                     textColor: this.props.textColor,
+                    key: randomKey
                 });
             }
         },
@@ -189,26 +192,24 @@ var NotificationBadge = function (_React$Component) {
                 var _props = this.props;
                 var style = _props.style;
                 var children = _props.children;
-                var badgeContent = _props.badgeContent;
 
                 var notificationsList = this.state.notifications;
-
 
                 ////////////////////////////////////////////////////////////////
                 // Prepare floating div element with all entries to notify
                 ////////////////////////////////////////////////////////////////
 
-                var textType = "entrades";
-
-                var textNew = "noves";
+                var textType = _props.tooltip.toLowerCase();
 
                 //A title with the count and the element type
                 var menu_entries = [];
                 menu_entries.push(
                     _react2.default.createElement(
                         _subheader2.default,
-                        {},
-                        "Té " + this.state.count + " " + textType + " " + textNew
+                        {
+                          key: this.state.key + "header"
+                        },
+                        "Té " + this.state.count + " " + textType
                     )
                 );
 
@@ -216,19 +217,19 @@ var NotificationBadge = function (_React$Component) {
                 menu_entries.push(
                     _react2.default.createElement(
                         _divider.default,
-                        {}
+                        { key: this.state.key + "separator"}
                     )
                 );
 
                 //The elements to notify using the subject key
-                for (var i = 0; i < this.state.count; i++) {
+                this.state.notifications.forEach(function (notification, index) {
                     var entry = _react2.default.createElement(
                         _menuItem2.default,
-                        {},
-                        notificationsList[i].subject
+                        { key: _props.tooltip + index },
+                        notification.subject
                     );
                     menu_entries.push(entry);
-                }
+                });
 
                 //Composing the menu
                 var menu = _react2.default.createElement(
@@ -237,10 +238,8 @@ var NotificationBadge = function (_React$Component) {
                     menu_entries
                 );
 
-
                 //When touching the badge -> show the floating div
                 var handleTouchTap = function (event) {
-                    console.dir(event.currentTarget);
                     this.setState({
                         open: true,
                         anchorEl: event.currentTarget,
@@ -255,7 +254,6 @@ var NotificationBadge = function (_React$Component) {
                         open: false,
                     })
                 }.bind(this);
-
 
                 //The floating div
                 var popover = _react2.default.createElement(
@@ -332,14 +330,20 @@ NotificationBadge.propTypes = {
     /**
      * This is the content rendered within the badge.
      */
-    notificationsList: _react2.default.PropTypes.object,
 
-    badgeContent: _react2.default.PropTypes.node.isRequired,
+    notificationsList: _react2.default.PropTypes.array.isRequired,
+
+    tooltip: _react2.default.PropTypes.string,
+
+    textColor: _react2.default.PropTypes.node,
+
+    badgeColor: _react2.default.PropTypes.node,
+
+    icon: _react2.default.PropTypes.object.isRequired,
 
     /**
      * Override the inline-styles of the badge element.
      */
-    badgeStyle: _react2.default.PropTypes.object,
 
     /**
      * The badge will be added relativelty to this node.
