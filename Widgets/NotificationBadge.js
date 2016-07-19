@@ -63,6 +63,12 @@ var _badge2 = _interopRequireDefault(_badge);
 var _iconButton = require('../IconButton');
 var _iconButton2 = _interopRequireDefault(_iconButton);
 
+var _listItem = require('../List/ListItem')
+var _listItem2 = _interopRequireDefault(_listItem);
+
+var _avatar = require('../Avatar')
+var _avatar2 = _interopRequireDefault(_avatar);
+
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {default: obj};
 }
@@ -221,13 +227,30 @@ var NotificationBadge = function (_React$Component) {
                     )
                 );
 
-                //The elements to notify using the subject key
                 this.state.notifications.forEach(function (notification, index) {
+
+                    //The avatar if exists (notification.displayPicture)
+                    var avatar = (notification.displayPicture != undefined)?
+                        _react2.default.createElement(
+                            _avatar2.default,
+                            {
+                                src:notification.displayPicture
+                            }
+                        ):null;
+
+                    //The elements to notify using the subject key
+                    // If there are a messageTime defined, include it as a secondary text
                     var entry = _react2.default.createElement(
-                        _menuItem2.default,
-                        { key: _props.tooltip + index },
-                        notification.subject
+                        _listItem2.default,
+                        {
+                             key: _props.tooltip + index,
+                             leftAvatar: avatar,
+                             secondaryText: notification.messageTime,
+                             primaryText: notification.subject
+                        }
+
                     );
+
                     menu_entries.push(entry);
                 });
 

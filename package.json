@@ -1,7 +1,7 @@
 {
   "name": "material-ui-widgets",
   "author": {
-    "name": "GISCE-TI",
+    "name": "GISCE-TI"
   },
   "version": "0.0.1-alpha.1",
   "description": "React widgets that extends material-ui components",
@@ -29,5 +29,5 @@
   },
   "dependencies": {
     "material-ui": "^1.0.0"
-  },
+  }
 }
