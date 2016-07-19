@@ -63,6 +63,9 @@ var _badge2 = _interopRequireDefault(_badge);
 var _iconButton = require('../IconButton');
 var _iconButton2 = _interopRequireDefault(_iconButton);
 
+var _fontIcon = require('../FontIcon')
+var _fontIcon2 = _interopRequireDefault(_fontIcon);
+
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {default: obj};
 }
@@ -223,10 +226,16 @@ var NotificationBadge = function (_React$Component) {
 
                 //The elements to notify using the subject key
                 this.state.notifications.forEach(function (notification, index) {
+
                     var entry = _react2.default.createElement(
                         _menuItem2.default,
-                        { key: _props.tooltip + index },
-                        notification.subject
+                        {
+                             key: _props.tooltip + index,
+                        },
+                        (notification.from != undefined)?'@' + notification.from + ' | ':'',
+                        notification.subject,
+                        (notification.messageTime != undefined)? ' | ' + notification.messageTime:''
+
                     );
                     menu_entries.push(entry);
                 });

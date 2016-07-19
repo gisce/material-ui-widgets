@@ -209,12 +209,17 @@ var UserPanel = function (_React$Component) {
 
                 var name = "Xavi Torelló";
 
+                //name[0]
+
                 var avatar = _react2.default.createElement(
                     _avatar2.default,
                     {
-                        src: "http://xaviertorello.cat/img/projects/me.png"
+                        src: "http://xaviertorello.cat/img/projects/me.png",
+                        style: {
+                            marginLeft: 20,
+                        },
                     }
-                    , name[0]
+
                 );
 
                 var listItem =  _react2.default.createElement(
@@ -224,6 +229,10 @@ var UserPanel = function (_React$Component) {
                         label: name
                     }
                 );
+
+                return avatar;
+
+
 
                 return listItem;
 
